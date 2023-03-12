@@ -1,0 +1,87 @@
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+*,*::after,*::before {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0px;
+}
+
+.accordion {
+    max-width: 70%;
+    margin: auto;
+
+}
+
+.acc-item {
+    height: fit-content;
+    border-top: 1px solid #a3a3a3;
+    margin-bottom: 10px;
+}
+.acc-item:hover {
+    cursor: pointer;
+    color: #ff00d4;
+}
+.acc-item:hover .item-body {
+    max-height: 17em;
+}
+
+.acc-title {
+    display: block;
+    margin: 20px 0px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.item-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2vw;
+    padding: 1vw 2vw 1vw 0vw;
+    transition: 0.2s ease-in-out;
+}
+
+.item-title:hover {
+    color: #ff00d4;
+}
+
+.item-input {
+    appearance: none;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+}
+
+.item-input:checked ~ .item-body {
+    max-height: 17em;
+}
+
+.item-input:checked ~ .item-title > .cross {
+    transform: rotate(45deg);
+}
+
+.item-body {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0px auto;
+    transition: 0.2s ease-in-out;
+}
+
+.img-meme {
+    display: block;
+    margin: 3% auto;
+    height: 20vw;
+}
+
+.cross {
+    height: 2vw;
+    transition: 0.2s;
+}
