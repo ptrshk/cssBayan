@@ -10,60 +10,94 @@ body {
 }
 
 p {
-    margin: 0px;
+    margin: 0;
 }
 
 .accordion {
     max-width: 70%;
     margin: auto;
-
+    
 }
 
 .acc-item {
     height: fit-content;
-    border-top: 1px solid #a3a3a3;
+    border-top: 0.1vw solid #dcdcdc;
     margin-bottom: 1vw;
 }
+.acc-item:hover {
+    cursor: pointer;
+}
+.accordion:hover .cross {
+    opacity: 1;
 
+}
+.acc-item:active .img-meme {
+    opacity: 0.8;
+}
+.acc-item:active > .label > .item-title {
+    color: #ff00d4;
+}
+.acc-item:active > .label > .item-title > .cross {
+    fill: #ff00d4;
+}
 
-
+.accordion:hover .item-title {
+    color: #000000;
+}
 .acc-title {
     display: block;
     margin: 2vw 0;
     text-align: center;
     font-size: 5vw;
 }
+.item-title:hover {
+    cursor: pointer;
+}
+.item-body:hover {
+    cursor: pointer;
+}
+
+.label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
 
 .item-title {
     display: flex;
+    color: #ff00d4;
     justify-content: space-between;
     font-size: 2vw;
     padding: 1vw 2vw 1vw 0vw;
     transition: 0.2s ease-in-out;
+    
 }
 
 
 
 .item-input {
     appearance: none;
-    width: 0px;
-    height: 0px;
-    position: absolute;
+    width: 0;
+    height: 0;
 }
 
-.item-input:checked ~ .item-body {
+.item-input:checked ~ .label > .item-body {
     max-height: 30em;
 }
 
-.item-input:checked ~ .item-title > .cross {
+.item-input:checked ~ .label > .item-title > .cross {
     transform: rotate(45deg);
+}
+.item-input:checked ~ .label > .item-title {
+    color: #000000;
 }
 
 .item-body {
+    max-width: 100%;
     display: block;
     max-height: 0;
     overflow: hidden;
-    margin: 0px auto;
+    margin: 0 auto;
     transition: 0.2s ease-in-out;
 }
 
@@ -74,6 +108,7 @@ p {
 }
 
 .cross {
+    opacity: 0;
     height: 2vw;
     transition: 0.2s;
 }
@@ -84,7 +119,6 @@ p {
         max-height: 30em;
     }
     .acc-item:hover {
-        cursor: pointer;
         color: #ff00d4;
     }
     .item-title:hover {
